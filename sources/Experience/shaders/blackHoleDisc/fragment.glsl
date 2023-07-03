@@ -42,7 +42,7 @@ void main()
     vec4 color = vec4(0.0);
     color.a = 1.0;
 
-    float iterations = 3.0;
+    float iterations = 7.0;
 
     for(float i = 0.0; i < iterations; i++)
     {
@@ -55,15 +55,14 @@ void main()
         uv.y *= 2.0;
         uv.x += uTime / ((i * 10.0) + 1.0);
 
-        // float ringAlpha = texture(uNoiseTexture, uv).r;
-        // ringAlpha *= intensity;
+        //float ringAlpha = texture(uNoiseTexture, uv).r;
+        //ringAlpha *= intensity;
 
-        vec3 ringColor = mix(uInnerColor, uOuterColor, progress);
+        vec3 ringColor = mix(uOuterColor, uOuterColor, progress);
 
         float noiseIntensity = texture(uNoiseTexture, uv).r;
 
         ringColor = mix(vec3(0.0), ringColor.rgb, noiseIntensity * intensity);
-
         color.rgb = blendAdd(color.rgb, ringColor);
     }
 

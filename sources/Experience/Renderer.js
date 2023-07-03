@@ -24,7 +24,7 @@ export default class Renderer
 
         // Renderer
         this.instance = new THREE.WebGLRenderer({
-            alpha: false,
+            alpha: true,
             antialias: true
         })
         this.instance.domElement.style.position = 'absolute'

@@ -74,7 +74,7 @@ export default class BlackHole
     setParticles()
     {
         this.particles = {}
-        this.particles.count = 50000
+        this.particles.count = 10000
 
         // Geometry
         const distanceArray = new Float32Array(this.particles.count)
@@ -141,8 +141,8 @@ export default class BlackHole
         screenPosition.x = screenPosition.x * 0.5 + 0.5
         screenPosition.y = screenPosition.y * 0.5 + 0.5
 
-        this.disc.material.uniforms.uTime.value = this.time.elapsed
-        this.particles.material.uniforms.uTime.value = this.time.elapsed + 9999.0
+        this.disc.material.uniforms.uTime.value = this.time.elapsed / 10
+        this.particles.material.uniforms.uTime.value = (this.time.elapsed / 20) + 9999.0
 
         this.distortion.active.mesh.lookAt(this.camera.instance.position)
 

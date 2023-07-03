@@ -11,13 +11,13 @@ function BlackHoleDiscMaterial()
         blending: THREE.AdditiveBlending,
         depthWrite: false,
         depthTest: false,
-        transparent: true,
+        transparent: false,
         uniforms:
         {
             uTime: { value: 0 },
             uNoiseTexture: { value: null },
-            uInnerColor: { value: new THREE.Color('#ff8080') },
-            uOuterColor: { value: new THREE.Color('#3633ff') }
+            uInnerColor: { value: new THREE.Color('#000000') },
+            uOuterColor: { value: new THREE.Color('#000000') }
         },
         vertexShader: vertexShader,
         fragmentShader: fragmentShader
